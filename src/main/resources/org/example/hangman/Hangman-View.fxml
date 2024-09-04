@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.hangman.HangmanController">
+   <children>
+      <HBox prefHeight="131.0" prefWidth="600.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="33.0" text="Lives:" />
+                        <Label fx:id="livesLbl" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <ImageView fx:id="hangman" fitHeight="159.0" fitWidth="244.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Graphics/step0.png" />
+               </image>
+            </ImageView>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <Label fx:id="endLbl" alignment="CENTER" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </children>
+      </HBox>
+      <BorderPane prefHeight="251.0" prefWidth="600.0">
+         <top>
+            <HBox prefHeight="90.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane prefHeight="79.0" prefWidth="354.0">
+                     <children>
+                        <Label fx:id="wordLbl" alignment="CENTER" contentDisplay="CENTER" layoutY="28.0" prefHeight="21.0" prefWidth="298.0" textFill="#56cd0c">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <GridPane fx:id="buttonGrid" alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="B" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="C" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="D" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="E" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="F" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="H" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="J" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="I" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="K" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="N" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="L" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="R" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="Q" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="P" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="O" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="X" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="V" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="U" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="T" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="Y" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="Z" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="A" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="G" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="M" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLetterButtonClick" prefHeight="30.0" prefWidth="30.0" text="S" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                     </children>
+                  </GridPane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
